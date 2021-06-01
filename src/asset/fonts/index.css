@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 400;
+    src: local('NanumSquareR'),
+    url('NanumSquareR.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 700;
+    src: local('NanumSquareB'),
+    url('NanumSquareB.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    font-weight: 400;
+    src: local('NotoSans'),
+    url('NotoSansR.woff2') format('woff2'),
+    url('NotoSansR.woff') format('woff');
+    unicode-range: U+00A9, U+00AE;
+}
+
+@font-face {
+    font-family: 'NotoSerif';
+    font-weight: 400;
+    src: local('NotoSerif'),
+    url('NotoSerifR.woff2') format('woff2'),
+    url('NotoSerifR.woff') format('woff');
+}

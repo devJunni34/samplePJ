@@ -1,0 +1,10 @@
+export { default as AccountIcon } from './AccountIcon';
+export { default as LockIcon } from './LockIcon';
+export { default as LogManageIcon } from './LogManageIcon';
+export { default as SecurityIcon } from './SecurityIcon';
+export { default as UploadIcon } from './UploadIcon';
+export { default as VIcon } from './vIcon';
+export { default as XIcon } from './xIcon';
+export { default as BangIcon } from './BangIcon';
+export { default as ListIcon } from './ListIcon';
+export { default as LogoutIcon } from './LogoutIcon';
