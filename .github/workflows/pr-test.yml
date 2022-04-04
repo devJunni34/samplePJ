@@ -23,7 +23,7 @@ jobs:
        uses: atlassian/gajira-find-issue-key@master
        id: find
        with:
-         string: ${{ github.event.ref }}
+         string: 'P2-377 dasdasdasdas'
 
      - name: debug2
        run: echo "::workflow-command parameter1=${{steps.find.outputs.issue}}, ${{steps.outputs.issue}}, ${{steps.find.outputs}}"
