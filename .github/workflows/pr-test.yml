@@ -8,24 +8,28 @@ jobs:
   jira-issue-link:
     runs-on: ubuntu-latest
     steps:
+     - name: debug
+       run: echo '::hello world'
+       
      - name: Login
        uses: atlassian/gajira-login@master
        env:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-                 echo "::hello world}"
+
 
      - name: Find Jira Issue
        uses: atlassian/gajira-find-issue-key@master
        id: find
        with:
          from: branch
-           echo "::workflow-command parameter1={branch}"
+
+     - name: debug2
+       run: echo "::workflow-command parameter1={steps.find.outputs.issue}"
   
      - name: Update PR body
        uses: AsasInnab/pr-body-action@v1
-               echo "::workflow-command parameter1={steps.find.outputs.issue}"
        if: steps.find.outputs.issue != ''
        with:
          body: "[${{ steps.find.outputs.issue }}](${{ secrets.JIRA_BASE_URL }}/browse/${{ steps.find.outputs.issue }})\n${{ github.event.pull_request.body }}"
