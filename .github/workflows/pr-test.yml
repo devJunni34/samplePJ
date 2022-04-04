@@ -27,7 +27,7 @@ jobs:
        uses: atlassian/gajira-find-issue-key@master
        id: find
        with:
-         from: ${{github.head_ref}}
+         string: ${{github.head_ref}}
      
 
 #      - name: debug2
