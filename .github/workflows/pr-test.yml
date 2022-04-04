@@ -31,7 +31,11 @@ jobs:
          
 
      - name: debug2
-       run: echo "::workflow-command parameter1=${{ steps.extract_branch.outputs.branch }},${{steps.find.outputs.issue}},${{steps.outputs.issue}} ${{steps.outputs.issue}}, ${{steps.find.outputs}}"
+       run: echo "::workflow-command parameter1=${{ github.event.pull_request.head.ref }},${{steps.find.outputs.issue}},${{steps.outputs.issue}} ${{steps.outputs.issue}}, ${{steps.find.outputs}}"
+       
+       
+     - name: debug3
+       run: echo "::workflow-command parameter1=${{ github.base_ref }} @@ ${{github.head_ref}} @@ ${{github.ref_name}}"
 
      - name: Update PR body
        uses: AsasInnab/pr-body-action@v1
