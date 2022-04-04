@@ -17,6 +17,7 @@ jobs:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
      - name: Extract branch name
        shell: bash
        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -30,7 +31,7 @@ jobs:
          
 
      - name: debug2
-       run: echo "::workflow-command parameter1=${{ steps.extract_branch.outputs.branch }},${{steps.find.outputs.issue}},${{steps.outputs.issue}} ${{steps.outputs.issue}}, ${{BRANCH_NAME}}, ${{steps.find.outputs}}"
+       run: echo "::workflow-command parameter1=${{ steps.extract_branch.outputs.branch }},${{steps.find.outputs.issue}},${{steps.outputs.issue}} ${{steps.outputs.issue}}, ${{steps.find.outputs}}"
 
      - name: Update PR body
        uses: AsasInnab/pr-body-action@v1
