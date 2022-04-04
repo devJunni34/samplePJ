@@ -20,8 +20,11 @@ jobs:
 
      - name: Find in commit messages
        uses: atlassian/gajira-find-issue-key@master
+       id: find
        with:
+         string: ${{ github.event.commits.map(c=>c.message).join(' ') }}
          from: branch
+         
 
      - name: debug2
        run: echo "::workflow-command parameter1=${{steps.find.outputs.issue}},${{steps.outputs.issue}} ${{steps.outputs.issue}}, ${{steps.find.outputs}}"
