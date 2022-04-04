@@ -26,7 +26,7 @@ jobs:
          from: branch
 
      - name: debug2
-       run: echo "::workflow-command parameter1={steps.find.outputs.issue}"
+       run: echo "::workflow-command parameter1=${{steps.find.outputs.issue}}"
   
      - name: Update PR body
        uses: AsasInnab/pr-body-action@v1
